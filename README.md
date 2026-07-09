@@ -1,8 +1,6 @@
-Community OS Beta 1.0 Commerce Complete
+Community OS Beta 1.0 Command/Event Loader Fix
 
-Features:
-- Shop query
-- Redeem flow
-- Point deduction
-- Order creation
-- Role/NFT extension
+Fix:
+- Central command registration
+- Shop command loading
+- Event loading foundation

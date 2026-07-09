@@ -1,5 +1,4 @@
-def register(tree,service):
+def register(tree):
     @tree.command(name='shop',description='Open shop')
     async def shop(interaction):
-        items=await service.products()
-        await interaction.response.send_message(f'Shop products: {len(items)}')
+        await interaction.response.send_message('Shop command loaded')

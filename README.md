@@ -1,8 +1,6 @@
-Community OS Beta 1.0 Complete Core Merge
+Community OS Beta 1.0 Growth Commerce Layer
 
-Core runtime:
-- Discord
-- Database
-- Point Engine
-- Daily
-- Message Reward foundation
+Adds:
+- Invite reward foundation
+- Mee6 role reward mapping
+- Shop order foundation

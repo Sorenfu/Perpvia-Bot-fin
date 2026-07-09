@@ -1,3 +1,7 @@
-Community OS Beta 1.0 Final Production Package
+Community OS Beta 1.0 Production Core Upgrade
 
-Includes runtime, config, deployment, and module structure.
+Production runtime layer:
+- PostgreSQL connection
+- Point Engine
+- Transaction ledger
+- Business configuration

@@ -2,48 +2,120 @@ import os
 import discord
 from discord import app_commands
 from dotenv import load_dotenv
+
 from database.db import init_db
-from core.points import PointEngine
+from commands.loader import load_commands
+from events.loader import load_events
+
 
 load_dotenv()
 
+
 class CommunityOS(discord.Client):
+
     def __init__(self):
-        intents=discord.Intents.default()
-        intents.members=True
-        intents.message_content=True
-        super().__init__(intents=intents)
-        self.tree=app_commands.CommandTree(self)
-        self.points=PointEngine()
+
+        intents = discord.Intents.default()
+
+        intents.members = True
+
+        intents.message_content = True
+
+
+        super().__init__(
+            intents=intents
+        )
+
+
+        self.tree = app_commands.CommandTree(self)
+
+
 
     async def setup_hook(self):
+
+        print("Community OS Starting...")
+
+
+        # Database
+
         await init_db()
-        guild=discord.Object(id=int(os.getenv('GUILD_ID')))
-        self.tree.copy_global_to(guild=guild)
-        await self.tree.sync(guild=guild)
-        print('Commands synced')
 
-bot=CommunityOS()
 
-@bot.tree.command(name='balance',description='View points')
-async def balance(interaction):
-    p=await bot.points.balance(interaction.user.id)
-    await interaction.response.send_message(f'💎 Balance: {p} Points')
+        print(
+            "Database Connected"
+        )
 
-@bot.tree.command(name='daily',description='Daily reward')
-async def daily(interaction):
-    await bot.points.add(interaction.user.id,20,'daily','Daily Check-in')
-    await interaction.response.send_message('🎉 Daily +20 Points')
 
-@bot.event
-async def on_message(message):
-    if message.author.bot:
-        return
-    if len(message.content)>=10:
-        await bot.points.add(message.author.id,1,'message','Message Reward')
+        # Load Commands
+
+        load_commands(
+            self.tree
+        )
+
+
+        print(
+            "Commands Loaded"
+        )
+
+
+        # Load Events
+
+        load_events(
+            self
+        )
+
+
+        print(
+            "Events Loaded"
+        )
+
+
+        # Discord Guild Sync
+
+        guild = discord.Object(
+            id=int(
+                os.getenv(
+                    "GUILD_ID"
+                )
+            )
+        )
+
+
+        self.tree.copy_global_to(
+            guild=guild
+        )
+
+
+        synced = await self.tree.sync(
+            guild=guild
+        )
+
+
+        print(
+            "Synced Commands:",
+            [
+                cmd.name
+                for cmd in synced
+            ]
+        )
+
+
+
+bot = CommunityOS()
+
+
 
 @bot.event
 async def on_ready():
-    print(f'Community OS Ready: {bot.user}')
 
-bot.run(os.getenv('DISCORD_TOKEN'))
+    print(
+        f"Community OS Ready: {bot.user}"
+    )
+
+
+
+bot.run(
+    os.getenv(
+        "DISCORD_TOKEN"
+    )
+)

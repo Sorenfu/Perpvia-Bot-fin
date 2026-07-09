@@ -1,6 +1,7 @@
-Community OS Beta 1.0 Command/Event Loader Fix
+Community OS Beta 1.0.11 Shop Production
 
-Fix:
-- Central command registration
-- Shop command loading
-- Event loading foundation
+Upgrade:
+- /shop connected to database
+- Product listing
+- Shop embed
+- Redeem foundation

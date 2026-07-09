@@ -1,3 +1,4 @@
+print("VERSION: BETA_1.0_PRODUCTION_FINAL")
 import os
 import discord
 from discord import app_commands

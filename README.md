@@ -1,6 +1,7 @@
-Community OS Beta 1.0.1 Point Engine Fix
+Community OS Beta 1.0.8 Daily Integration
 
-Fix:
-- asyncpg pool lifecycle
-- PointEngine database reference
-- Remove NoneType acquire error
+Integrated:
+- Daily command
+- 12 hour cooldown
+- +20 points
+- Point Engine connection

@@ -1,10 +1,5 @@
-daily:
- reward:20
- cooldown_hours:12
-message:
- reward:1
- cooldown_seconds:60
- daily_limit:50
- minimum_length:10
-invite:
- reward:20
+daily:20
+message:1
+invite:20
+message_cooldown:60
+message_limit:50

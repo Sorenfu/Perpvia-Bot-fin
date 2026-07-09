@@ -1,7 +1,8 @@
-Community OS Beta 1.0.8 Daily Integration
+Community OS Beta 1.0 Complete Core Merge
 
-Integrated:
-- Daily command
-- 12 hour cooldown
-- +20 points
-- Point Engine connection
+Core runtime:
+- Discord
+- Database
+- Point Engine
+- Daily
+- Message Reward foundation

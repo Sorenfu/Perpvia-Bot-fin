@@ -1,7 +1,7 @@
-Community OS Beta 1.0 Production Core Upgrade
+Latest Community OS Beta 1.0 Runtime
 
-Production runtime layer:
+Fixed:
+- removed test balance response
+- real Point Engine query
 - PostgreSQL connection
-- Point Engine
-- Transaction ledger
-- Business configuration
+- Discord sync

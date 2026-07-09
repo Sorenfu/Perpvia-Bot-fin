@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS products(
+id SERIAL PRIMARY KEY,
+name TEXT,
+price INT,
+type TEXT,
+role_id BIGINT,
+status BOOLEAN DEFAULT TRUE
+);
+CREATE TABLE IF NOT EXISTS orders(
+id SERIAL PRIMARY KEY,
+user_id BIGINT,
+product_id INT,
+status TEXT,
+created_at TIMESTAMP DEFAULT NOW()
+);

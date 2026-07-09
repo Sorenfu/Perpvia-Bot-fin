@@ -1,6 +1,8 @@
-Community OS Beta 1.0 Growth Commerce Layer
+Community OS Beta 1.0 Commerce Complete
 
-Adds:
-- Invite reward foundation
-- Mee6 role reward mapping
-- Shop order foundation
+Features:
+- Shop query
+- Redeem flow
+- Point deduction
+- Order creation
+- Role/NFT extension

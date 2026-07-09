@@ -1,7 +1,6 @@
-Latest Community OS Beta 1.0 Runtime
+Community OS Beta 1.0.1 Point Engine Fix
 
-Fixed:
-- removed test balance response
-- real Point Engine query
-- PostgreSQL connection
-- Discord sync
+Fix:
+- asyncpg pool lifecycle
+- PointEngine database reference
+- Remove NoneType acquire error
